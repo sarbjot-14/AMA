@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "264010588133",
+    "firebase_url": "https://ask-me-anything-ea6b2.firebaseio.com",
+    "project_id": "ask-me-anything-ea6b2",
+    "storage_bucket": "ask-me-anything-ea6b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264010588133:android:699a934748623d5df0590c",
+        "android_client_info": {
+          "package_name": "com.flutterdev.ama"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264010588133-5v04rfh378lau1t54s9bnhao4pnc18g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3y-U5pdh-r8lr5DVFF0vfhip9xk8oUOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264010588133-5v04rfh378lau1t54s9bnhao4pnc18g1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
