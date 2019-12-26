@@ -1,3 +1,4 @@
+import 'package:ama/services/auth.dart';
 import 'package:flutter/material.dart';
 
 import 'home/home.dart';
@@ -22,6 +23,15 @@ class _BaseState extends State<Base> {
     return Scaffold(
       appBar: AppBar(
         title: Text("AMA"),
+        actions: <Widget>[
+          FlatButton.icon(
+            icon: Icon(Icons.person),
+            label: Text('sign out'),
+            onPressed: () async {
+              await AuthService().signOut();
+            },
+          ),
+        ],
       ),
       body: _selectedIndex == 0 ? Home() : Inbox(),
       bottomNavigationBar: BottomNavigationBar(
