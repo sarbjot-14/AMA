@@ -1,14 +1,14 @@
 import 'package:ama/services/auth.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   final Function switchAuthPage;
-  SignIn({this.switchAuthPage});
+  Register({this.switchAuthPage});
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
   final AuthService _auth = AuthService();
   final _formkey = GlobalKey<FormState>();
 
@@ -25,14 +25,12 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
-        title: Text('Sign in to AMA'),
+        title: Text('Register with AMA'),
         actions: <Widget>[
           FlatButton.icon(
             icon: (Icon(Icons.person)),
-            label: Text("register"),
-            onPressed: () {
-              widget.switchAuthPage();
-            },
+            label: Text("sign in"),
+            onPressed: widget.switchAuthPage,
           ),
         ],
       ),
@@ -51,8 +49,8 @@ class _SignInState extends State<SignIn> {
               ),
               SizedBox(height: 20.0),
               TextFormField(
-                validator: (val) => val.length < 4
-                    ? "Please enter password more than 4 characters"
+                validator: (val) => val.length < 6
+                    ? "Please enter password more than 6 characters"
                     : null,
                 obscureText: true,
                 onChanged: (val) {
@@ -63,16 +61,16 @@ class _SignInState extends State<SignIn> {
               RaisedButton(
                   color: Colors.pink[400],
                   child: Text(
-                    'Sign In',
+                    'Register',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
                     if (_formkey.currentState.validate()) {
-                      dynamic User = await _auth.signInWithEmailAndPassword(
+                      dynamic User = await _auth.registerWithEmailAndPassword(
                           email, password);
                       if (User == null) {
                         setState(() {
-                          error = "Could not sign in with those credentials";
+                          error = "Please provide a valid email address";
                         });
                       }
                     }
