@@ -1,4 +1,5 @@
 import 'package:ama/screens/home/CreatePost.dart';
+import 'package:ama/screens/home/post_screen.dart';
 import 'package:ama/screens/wrapper.dart';
 import 'package:ama/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (ctx) => Wrapper(), // home screen is has tabs
           CreatePost.routeName: (ctx) => CreatePost(),
+          PostScreen.routeName: (ctx) => PostScreen(),
         },
       ),
     );

@@ -18,8 +18,8 @@ class _CreatePostState extends State<CreatePost> {
   bool loading = false;
 
   // text field state
-  String email = '';
-  String password = '';
+  String title = '';
+  String content = '';
 
   String error = '';
 
@@ -45,14 +45,18 @@ class _CreatePostState extends State<CreatePost> {
                   ),
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.pink, width: 2.0))),
-              validator: (val) => val.isEmpty ? "Enter an email" : null,
+              validator: (val) => val.isEmpty ? "Enter an title" : null,
               onChanged: (val) {
-                setState(() => email = val);
+                setState(() => title = val);
               },
             ),
             SizedBox(height: 20.0),
             TextFormField(
+              validator: (val) =>
+                  val.length < 15 ? "Please add more content" : null,
+              maxLines: 4,
               decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 60),
                   hintText: "Content",
                   fillColor: Colors.white,
                   filled: true,
@@ -62,7 +66,7 @@ class _CreatePostState extends State<CreatePost> {
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.pink, width: 2.0))),
               onChanged: (val) {
-                setState(() => password = val);
+                setState(() => content = val);
               },
             ),
             SizedBox(height: 20.0),
@@ -79,8 +83,8 @@ class _CreatePostState extends State<CreatePost> {
                     });
                     //create doc
                     await DatabaseService(uid: "2").createPost(Post(
-                        title: email,
-                        content: password,
+                        title: title,
+                        content: content,
                         posterId: user.uid,
                         posterName: user.uid));
                     setState(() {

@@ -62,7 +62,7 @@ class _BaseState extends State<Base> {
                     CreatePost.routeName,
                   );
                 },
-                child: Icon(Icons.navigation),
+                child: Icon(Icons.add),
                 backgroundColor: Colors.green,
               )
             : null,
