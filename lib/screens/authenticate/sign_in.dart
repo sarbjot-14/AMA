@@ -97,9 +97,9 @@ class _SignInState extends State<SignIn> {
                             setState(() {
                               loading = true;
                             });
-                            dynamic User = await _auth
+                            dynamic user = await _auth
                                 .signInWithEmailAndPassword(email, password);
-                            if (User == null) {
+                            if (user == null) {
                               setState(() {
                                 error =
                                     "Could not sign in with those credentials";

@@ -1,3 +1,4 @@
+import 'package:ama/screens/home/CreatePost.dart';
 import 'package:ama/screens/wrapper.dart';
 import 'package:ama/services/auth.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,13 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: Wrapper(),
+        //home: Wrapper(),
+        // home: CategoriesScreen(),
+        initialRoute: '/', // default is '/'
+        routes: {
+          '/': (ctx) => Wrapper(), // home screen is has tabs
+          CreatePost.routeName: (ctx) => CreatePost(),
+        },
       ),
     );
   }

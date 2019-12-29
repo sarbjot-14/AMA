@@ -95,9 +95,9 @@ class _RegisterState extends State<Register> {
                             setState(() {
                               loading = true;
                             });
-                            dynamic User = await _auth
+                            dynamic user = await _auth
                                 .registerWithEmailAndPassword(email, password);
-                            if (User == null) {
+                            if (user == null) {
                               setState(() {
                                 error = "Please provide a valid email address";
                                 loading = false;
