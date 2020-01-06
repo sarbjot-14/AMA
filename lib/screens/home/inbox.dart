@@ -8,18 +8,9 @@ class Inbox extends StatelessWidget {
   Widget build(BuildContext context) {
     final User user = Provider.of<User>(context);
     var postList = Provider.of<List<Post>>(context);
-    postList =
-        postList.where((item) => item.posterId == user.uid).toList(); //apples
-    return ListView(
-      scrollDirection: Axis.vertical,
-      children: postList.map((aPost) {
-        return ListTile(
-          title: Text(aPost.title),
-          subtitle: Text(aPost.content.length < 60
-              ? aPost.content
-              : aPost.content.substring(0, 60) + "...."),
-        );
-      }).toList(),
-    );
+    postList == null
+        ? []
+        : postList.where((item) => item.posterId == user.uid).toList();
+    return Text("what");
   }
 }

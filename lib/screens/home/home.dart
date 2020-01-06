@@ -11,7 +11,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    final postList = Provider.of<List<Post>>(context);
+    final postList = Provider.of<List<Post>>(context) ?? [];
 
     return ListView(
       scrollDirection: Axis.vertical,

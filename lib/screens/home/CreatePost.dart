@@ -82,7 +82,7 @@ class _CreatePostState extends State<CreatePost> {
                       loading = true;
                     });
                     //create doc
-                    await DatabaseService(uid: "2").createPost(Post(
+                    await DatabaseService(title: title).createPost(Post(
                         title: title,
                         content: content,
                         posterId: user.uid,
